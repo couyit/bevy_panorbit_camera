@@ -1,8 +1,7 @@
 //! Demonstrates usage with multiple viewports
 
-use bevy::prelude::*;
-use bevy::render::camera::Viewport;
 use bevy::window::WindowResized;
+use bevy::{camera::Viewport, prelude::*};
 use bevy_panorbit_camera::{PanOrbitCamera, PanOrbitCameraPlugin};
 
 fn main() {

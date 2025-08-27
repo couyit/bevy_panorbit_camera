@@ -3,11 +3,10 @@
 
 use std::f32::consts::PI;
 
+use bevy::camera::{CameraUpdateSystems, RenderTarget};
 use bevy::input::gestures::PinchGesture;
 use bevy::input::mouse::MouseWheel;
 use bevy::prelude::*;
-use bevy::render::camera::{CameraUpdateSystem, RenderTarget};
-use bevy::transform::TransformSystem;
 use bevy::window::{PrimaryWindow, WindowRef};
 #[cfg(feature = "bevy_egui")]
 use bevy_egui::EguiPreUpdateSet;
@@ -58,8 +57,8 @@ impl Plugin for PanOrbitCameraPlugin {
                 )
                     .chain()
                     .in_set(PanOrbitCameraSystemSet)
-                    .before(TransformSystem::TransformPropagate)
-                    .before(CameraUpdateSystem),
+                    .before(TransformSystems::Propagate)
+                    .before(CameraUpdateSystems),
             );
 
         #[cfg(feature = "bevy_egui")]

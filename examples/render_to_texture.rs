@@ -8,15 +8,13 @@
 
 use std::f32::consts::PI;
 
+use bevy::camera::visibility::RenderLayers;
+use bevy::camera::{ImageRenderTarget, RenderTarget};
 use bevy::window::PrimaryWindow;
 use bevy::{
     prelude::*,
-    render::{
-        camera::{ImageRenderTarget, RenderTarget},
-        render_resource::{
-            Extent3d, TextureDescriptor, TextureDimension, TextureFormat, TextureUsages,
-        },
-        view::RenderLayers,
+    render::render_resource::{
+        Extent3d, TextureDescriptor, TextureDimension, TextureFormat, TextureUsages,
     },
 };
 use bevy_panorbit_camera::{ActiveCameraData, PanOrbitCamera, PanOrbitCameraPlugin};

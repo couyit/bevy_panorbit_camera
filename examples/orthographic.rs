@@ -1,7 +1,6 @@
 //! Demonstrates usage with an orthographic camera
 
 use bevy::prelude::*;
-use bevy::render::camera::ScalingMode;
 use bevy_panorbit_camera::{PanOrbitCamera, PanOrbitCameraPlugin, PanOrbitCameraSystemSet};
 
 fn main() {
@@ -43,7 +42,7 @@ fn setup(
     commands.spawn((
         Transform::from_translation(Vec3::new(0.0, 1.5, 6.0)),
         Projection::from(OrthographicProjection {
-            scaling_mode: ScalingMode::FixedVertical {
+            scaling_mode: bevy::camera::ScalingMode::FixedVertical {
                 viewport_height: 1.0,
             },
             ..OrthographicProjection::default_3d()
